@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <header>
+        <h1>Para la Tilina Más Especial ❤️</h1>
+        <p>Un espacio creado solo para Yami </p>
+    </header>
+    
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#momentos">Momentos</a>
+        <a href="#mensaje">Un Mensaje</a>
+        <button class="btn" onclick="document.getElementById('Activar Musica').play()">🎶 Reproducir Música</button>
+
+    <audio id="Activar Musica" loop>
+  <source src="im so silly _P.mp3" type="audio/mpeg">
+    </audio>
+    </nav>
+    
+
+
+    <section id="inicio">
+        <h2>Bienvenida, Corazoncito de Melon🍈♥️</h2>
+        <p>Esta página la hice especialmente para ti yami, porque eres lo más importante en mi vida. 
+           Desde que te conozco has sido lo mejor que me ha pasado, estos dos ultimos años han sido los mejores de  mi vida,
+           la mayor parte porque tu formas parte de esa vida, y quiero que sepas que siempre estaré aquí para ti,
+           apoyándote y amándote cada día más. Eres mi razón de ser, mi alegría, mi fe, mi luz y mi todo.
+        </p>
+        <p>
+        ‎ 
+        </p>
+        <p>
+            Espero te guste este pequeño detalle que hice con todo mi amor y una quebradita de coco jaja.  
+            FELICES 2 AÑOS JUNTOS MIAMORCITO😽😽, ¡Y QUE VENGAN MUCHOS MÁS!
+        </p>
+    </section>
+    <section id="mensaje">
+        <h2>Un Mensaje Para Ti</h2>
+        <p>Solo quiero que sepas que eres mi felicidad, mi apoyo y mi más grande amor. ❤️</p>
+        
+        <button class="btn" onclick="hacerPregunta()">Responde una Pregunta 💌</button>
+        <div id="resultado"></div>
+
+        <button class="btn" onclick="mostrarSorpresa()">Ver Sorpresa 🎁</button>
+        <p id="sorpresa" style="display:none; font-size:1.5rem; color:#d63384;">
+            <img src="520eb2ab-9f5c-4c74-985f-d024009041a4.jpg" alt="" width="600" height="400" style="border-radius: 10px;" >
+        </p>
+    </section>
+
+    <section id="momentos">
+        <h2>Momentos</h2>
+        <p>Aquí hay fotos o recuerdos de nuestras mejores experiencias juntos. 
+           Cada instante a tu lado es único y especial.</p>
+        <div class="galeria">
+            <img src="d163c0f7-386c-4633-b836-c82e0f15b024.jpg" width="300" height="400">
+            <img src="827f650e-a705-4c26-8141-62e48cb8e23f.jpg" width="600" height="400">
+            <img src="1ab9cc03-5241-4fcf-acde-923015b5bf27.jpg" width="300" height="400">
+            <img src="ae407b5c-3ea9-41e4-b28e-ae2d8b0e75d7.jpg" width="300" height="400">
+            <img src="fa1f6c1f-9a4c-4970-b72a-d783b3ecf888.jpg" width="300" height="400">
+            <img src="0fc1ccac-3c05-47a4-804c-a6cea9ee2afb.jpg" width="300" height="400">
+            <img src="f354cec5-e5e1-4d40-bcaf-45651905547b.jpg" width="300" height="400">
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>&copy; 2025 Con todo mi amor para ti 💕</p>
+    </footer>
+
+    <!-- Contenedores para corazones y estrellas -->
+    <div id="corazones"></div>
+    <div id="estrellas"></div>
+
+    <script>
+        // Pregunta interactiva
+        function hacerPregunta() {
+            let respuesta = prompt("💖 ¿Cuál es el nombre de la persona que más amo en el mundo?");
+            if (respuesta && respuesta.toLowerCase().trim() === "yami") {
+                document.getElementById("resultado").innerHTML = "❤️❤️❤️ ¡Correcto mi amorchito! ❤️❤️❤️";
+            } else {
+                document.getElementById("resultado").innerHTML = "😢 Inténtalo de nuevo papu, wa wa waaaa  💕";
+            }
+        }
+
+        // Sorpresa oculta
+        function mostrarSorpresa() {
+            document.getElementById("sorpresa").style.display = "block";
+        }
+
+        // Corazones flotando
+        setInterval(() => {
+            let corazon = document.createElement("div");
+            corazon.innerHTML = "❤️";
+            corazon.classList.add("corazon");
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = (Math.random() * 2 + 3) + "s";
+            document.getElementById("corazones").appendChild(corazon);
+            setTimeout(() => corazon.remove(), 5000);
+        }, 600);
+
+        // Estrellas animadas
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement("div");
+            star.classList.add("star");
+            star.style.left = Math.random() * window.innerWidth + "px";
+            star.style.top = Math.random() * window.innerHeight + "px";
+            document.getElementById("estrellas").appendChild(star);
+        }
+    </script>
+</body>
+</html>
